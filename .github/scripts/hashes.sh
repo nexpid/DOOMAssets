@@ -11,6 +11,6 @@ find . -type f | while read -r file; do
     hash=`md5sum "$file" | awk '{print $1}'`
     
     # Print file name and hash to the output file
-    echo "[DEBUG]: $file ${file:2}"
+    echo "[DEBUG]: $file"
     echo "${file:2}?$hash" >> "$outfile"
 done
