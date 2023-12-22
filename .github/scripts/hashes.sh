@@ -1,6 +1,10 @@
 outfile="hashes.txt"
 
+echo Sanity check 1
+
 [ -e "$outfile" ] && rm "$outfile"
+
+echo Sanity check 2
 
 find . -type f | while read -r file; do
     # Generate MD5 hash for the file
