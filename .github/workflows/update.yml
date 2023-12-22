@@ -1,0 +1,51 @@
+name: Update
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: main
+
+      - name: Prepare environment
+        run: |
+          mkdir tmp
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Get latest js-dos
+        working-directory: tmp
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          url=`gh api repos/caiiiycuk/js-dos/releases/latest -q ".assets[0].browser_download_url"`
+
+          curl -o jsdos.zip -L $url
+          unzip jsdos.zip -d jsdos
+          rm jsdos.zip
+
+      - name: Update files
+        run: |
+          mv tmp/jsdos/js-dos.css main/assets/jsdos/js-dos.css
+          mv tmp/jsdos/js-dos.js main/assets/jsdos/js-dos.js
+          mv tmp/jsdos/wdosbox.js main/assets/jsdos/wdosbox.js
+          mv tmp/jsdos/wdosbox.wasm main/assets/jsdos/wdosbox.wasm
+
+      - name: Generate hashes
+        working-directory: main/assets
+        run: sh ../.github/scripts/hashes.sh
+
+      - name: Commit changes
+        working-directory: main
+        run: |
+          git add assets
+          git commit -m "chore(assets): update js-dos" | true
+          git push

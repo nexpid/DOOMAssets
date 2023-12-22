@@ -1,0 +1,18 @@
+{
+  "required": [
+    "jsdos/js-dos.css",
+    "jsdos/js-dos.js",
+    "jsdos/wdosbox.js",
+    "jsdos/wdosbox.wasm"
+  ],
+  "games": [
+    {
+      "title": "Doom I",
+      "root": "games/doom.jsdos"
+    },
+    {
+      "title": "Doom II",
+      "root": "games/doom2.jsdos"
+    }
+  ]
+}
