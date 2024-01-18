@@ -1,17 +1,19 @@
 {
-  "required": [
-    "jsdos/js-dos.css",
-    "jsdos/js-dos.js",
-    "jsdos/wdosbox.js",
-    "jsdos/wdosbox.wasm"
-  ],
+  "required": {
+    "URL_JSDOS_CSS?u": "jsdos/js-dos.css",
+    "URL_JSDOS_JS?u": "jsdos/js-dos.js",
+    "URL_JSDOS_WDOSBOX_JS": "jsdos/wdosbox.js",
+    "URL_JSDOS_WDOSBOX_WASM": "jsdos/wdosbox.wasm"
+  },
   "games": [
     {
       "title": "Doom I",
+      "id": "doom1",
       "root": "games/doom.jsdos"
     },
     {
       "title": "Doom II",
+      "id": "doom2",
       "root": "games/doom2.jsdos"
     }
   ]
