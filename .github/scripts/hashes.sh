@@ -1,8 +1,8 @@
 outfile="hashes.txt"
 
-[ -e "$outfile" ] && rm "$outfile"
+rm -rf $outfile | true
 
-find . -type f | while read -r file; do
+find * -type f -printf '%p\0' | sort | while read -d $'\0' -r file; do
     hash=`md5sum "$file" | awk '{print $1}'`
-    echo "$file?$hash" >> "$outfile"
+    echo "$file|$hash" >> "$outfile"
 done
