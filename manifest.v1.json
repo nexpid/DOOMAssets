@@ -15,6 +15,11 @@
       "title": "Doom II",
       "id": "doom2",
       "root": "games/doom2.jsdos"
+    },
+    {
+      "title": "Duke Nukem 3D",
+      "id": "duke3d",
+      "root": "games/duke3d.jsdos"
     }
   ]
 }
