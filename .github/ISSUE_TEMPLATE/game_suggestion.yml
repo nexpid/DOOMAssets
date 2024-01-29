@@ -1,0 +1,34 @@
+name: Game Suggestion
+description: Suggest a new game to be added to the plugin!
+title: "[Game Suggestion]: GAME NAME HERE"
+labels: [game suggestion]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thanks for taking the time to suggest a new game!
+  - type: checkboxes
+    attributes:
+      label: Check all the boxes below
+      options:
+        - label: I have checked that the game I'm suggesting is a DOS game available on [dos.zone](https://dos.zone)
+          required: true
+  - type: input
+    id: discord-username
+    attributes:
+      label: Discord username
+      description: Enter your discord username (@User#0000 / @user)
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Game name
+      description: The name of the game you're suggesting
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional notes
+      description: Anything else you'd like to add?
+    validations:
+      required: false
