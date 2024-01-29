@@ -1,3 +1,4 @@
+./games/duke3d.jsdos?e07449f51603a6b88e8f4f271d6f0b97
 ./games/doom.jsdos?c3c9a2ec9165ebdaec46845d5fd54b47
 ./games/doom2.jsdos?f9b0bf01b478154239aef81df821f912
 ./jsdos/wdosbox.js?6757c2f22ef71a3956dda73095cfc1d7
