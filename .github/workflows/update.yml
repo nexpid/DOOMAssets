@@ -2,7 +2,11 @@ name: Update
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "0 0 * * *"
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/update.yml
   workflow_dispatch:
 
 jobs:
@@ -17,10 +21,7 @@ jobs:
           path: main
 
       - name: Prepare environment
-        run: |
-          mkdir tmp
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        run: mkdir tmp
 
       - name: Get latest js-dos
         working-directory: tmp
@@ -47,6 +48,9 @@ jobs:
       - name: Commit changes
         working-directory: main
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add assets
           git commit -m "chore(assets): update js-dos" | true
           git push
