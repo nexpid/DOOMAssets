@@ -43,7 +43,7 @@ jobs:
 
       - name: Generate hashes
         working-directory: main/assets
-        run: sh ../.github/scripts/hashes.sh
+        run: ../.github/scripts/hashes.sh
 
       - name: Commit changes
         working-directory: main
