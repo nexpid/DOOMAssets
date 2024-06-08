@@ -36,10 +36,10 @@ jobs:
 
       - name: Update files
         run: |
-          mv tmp/jsdos/js-dos.css main/assets/jsdos/js-dos.css
-          mv tmp/jsdos/js-dos.js main/assets/jsdos/js-dos.js
-          mv tmp/jsdos/wdosbox.js main/assets/jsdos/wdosbox.js
-          mv tmp/jsdos/wdosbox.wasm main/assets/jsdos/wdosbox.wasm
+          mv tmp/jsdos/dist/js-dos.css main/assets/jsdos/js-dos.css
+          mv tmp/jsdos/dist/js-dos.js main/assets/jsdos/js-dos.js
+          mv tmp/jsdos/dist/emulators/wdosbox.js main/assets/jsdos/wdosbox.js
+          mv tmp/jsdos/dist/emulators/wdosbox.wasm main/assets/jsdos/wdosbox.wasm
 
       - name: Generate hashes
         working-directory: main/assets
