@@ -2,6 +2,6 @@ games/doom.jsdos|c3c9a2ec9165ebdaec46845d5fd54b47
 games/doom2.jsdos|f9b0bf01b478154239aef81df821f912
 games/duke3d.jsdos|e07449f51603a6b88e8f4f271d6f0b97
 jsdos/js-dos.css|2f98a8ac0c16ffb29d03221e1e4d998f
-jsdos/js-dos.js|87039c2a7b244d2814ec3c6ed530c3eb
+jsdos/js-dos.js|15f7571dbb465b893f5bbe3b985d96e1
 jsdos/wdosbox.js|349f57971fc83664a965ccaade30bc95
 jsdos/wdosbox.wasm|3cca6b4d1378d90316cfc9663693f45f
